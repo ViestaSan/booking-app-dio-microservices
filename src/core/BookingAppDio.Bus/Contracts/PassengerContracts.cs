@@ -1,0 +1,26 @@
+﻿namespace BookingAppDio.Bus.Contracts
+{
+    public record GetPassengerByIdRequest
+    {
+        public long PassengerId { get; init; }
+    }
+
+    public record PassengerResponse
+    {
+        public long Id { get; init; }
+        public string Name { get; init; }
+        public string PassportNumber { get; init; }
+        public PassengerType PassengerType { get; init; }
+        public int Age { get; init; }
+    }
+
+    public enum PassengerType
+    {
+        Male,
+        Female,
+        Baby,
+        Unknown
+    }
+
+    public record UserCreated(long Id, string Name, string PassportNumber);
+}
